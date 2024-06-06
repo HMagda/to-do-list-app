@@ -1,19 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-Do List Application</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="todo-container">
-        <h1>To-Do List</h1>
-        <input type="text" id="task-input" placeholder="Enter a new task" aria-label="Enter a new task">
-        <button id="add-task-btn" aria-label="Add new task">Add Task</button>
-        <ul id="task-list" aria-live="polite"></ul>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="script.js"></script>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>To-Do List Application</title>
+        <meta
+            name="description"
+            content="A simple and accessible To-Do List application"
+        />
+        <meta
+            name="keywords"
+            content="to-do list, task manager, task management, task completion"
+        />
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <div class="todo-container">
+            <h1 id="main-heading">To-Do List</h1>
+            <div class="add-container">
+                <label for="task-input" class="visually-hidden">New Task</label>
+                <input
+                    type="text"
+                    placeholder="New task"
+                    aria-label="Enter a new task"
+                    id="task-input"
+                    class="task-input"
+                />
+                <button
+                    aria-label="Add new task"
+                    id="add-task-btn"
+                    class="add-task-btn"
+                >
+                    ADD
+                </button>
+            </div>
+            <ul
+                aria-live="polite"
+                aria-relevant="additions removals"
+                id="task-list"
+                class="task-list"
+            ></ul>
+            <div
+                aria-live="assertive"
+                aria-atomic="true"
+                id="sr-announcements"
+                class="visually-hidden"
+            ></div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="script.js"></script>
+    </body>
 </html>
